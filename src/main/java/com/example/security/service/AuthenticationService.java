@@ -27,6 +27,7 @@ public class AuthenticationService {
     private final AuthenticationManager manager;
     private final TokenRepository tokenRepository;
 
+
     public AuthenticationResponse register(RegisterRequest request) {
         if (repository.findByEmail(request.getEmail()).isPresent())
             throw new UserAlreadyFoundException("User already found with fin : " + request.getEmail());
